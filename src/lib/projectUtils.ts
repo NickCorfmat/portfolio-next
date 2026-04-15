@@ -1,8 +1,4 @@
-import {
-  projects,
-  Project,
-  ProjectCategory,
-} from "../../public/media/portfolioData";
+import { projects, Project, ProjectCategory } from "@data/projects";
 
 export const getProjectsByCategory = (categories: ProjectCategory[]) => {
   return projects.filter((project) =>
@@ -13,4 +9,8 @@ export const getProjectsByCategory = (categories: ProjectCategory[]) => {
 export const getRandomProject = (projects: Project[]) => {
   const randomIndex = Math.floor(Math.random() * projects.length);
   return projects[randomIndex];
+};
+
+export const isVideo = (media: string) => {
+  return media.endsWith(".mp4") || media.endsWith(".webm");
 };
