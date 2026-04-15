@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 
-import { NAVBAR_ITEMS } from "../lib/constants";
+import { NAVBAR_ITEMS } from "@lib/constants";
 
 export function Navbar() {
   return (
