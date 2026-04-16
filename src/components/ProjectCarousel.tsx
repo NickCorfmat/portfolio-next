@@ -12,7 +12,7 @@ function CardGroup({ projects, onClick, suffix, ariaHidden = false }: any) {
           key={`${project.name}-${suffix}-${i}`}
           project={project}
           onClick={() => onClick(project)}
-          className="h-[275px] w-[480px] shrink-0"
+          className="h-[270px] w-[460px] shrink-0"
         />
       ))}
     </div>

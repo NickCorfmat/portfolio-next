@@ -4,7 +4,7 @@ import { NAVBAR_ITEMS } from "@lib/constants";
 
 export function Footer() {
   return (
-    <div className="w-full h-[150px] flex flex-row justify-center items-center bg-black text-white text-sm gap-24">
+    <div className="w-full h-[150px] flex flex-row justify-center items-center bg-black text-white text-sm font-bold gap-24">
       <div className="flex flex-row gap-12">
         {NAVBAR_ITEMS.map((item) => (
           <Link key={item.label} href={item.href}>

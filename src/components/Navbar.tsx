@@ -15,12 +15,21 @@ export function Navbar() {
 
   return (
     <div
-      className={`fixed top-0 left-0 w-full h-[75px] flex flex-row justify-center items-center text-md text-white gap-8 z-[1000] transition-colors duration-300 ${
+      className={`fixed top-0 left-0 w-full h-[75px] flex flex-row justify-end items-center px-12 text-lg font-bold text-white gap-8 z-[1000] transition-colors duration-300 ${
         scrolled ? "bg-[#111111]" : "bg-transparent"
       }`}
     >
       {NAVBAR_ITEMS.map((item) => (
-        <Link key={item.label} href={item.href}>
+        <Link
+          key={item.label}
+          href={item.href}
+          onClick={(e) => {
+            e.preventDefault();
+            document.getElementById(item.label)?.scrollIntoView({
+              behavior: "smooth",
+            });
+          }}
+        >
           {item.label.toUpperCase()}
         </Link>
       ))}
