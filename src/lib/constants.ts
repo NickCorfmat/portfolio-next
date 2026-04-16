@@ -1,18 +1,48 @@
 export const NAVBAR_ITEMS = [
-    {
-        label: "home",
-        href: "/"
-    },
-    {
-        label: "projects",
-        href: "/projects"
-    },
-    {
-        label: "resume",
-        href: "/resume"
-    },
-    {
-        label: "about",
-        href: "/about"
-    },
-]
+  {
+    label: "home",
+    href: "/",
+  },
+  {
+    label: "projects",
+    href: "/projects",
+  },
+  {
+    label: "resume",
+    href: "/resume",
+  },
+];
+
+export const techIconMap: Record<string, string> = {
+  unity: "devicon-unity-plain",
+  unrealengine: "devicon-unrealengine-original",
+  typescript: "devicon-typescript-plain",
+  javascript: "devicon-javascript-plain",
+  csharp: "devicon-csharp-plain colored",
+  cpp: "devicon-cplusplus-plain colored",
+  c: "devicon-c-original",
+  python: "devicon-python-plain colored",
+  java: "devicon-java-plain",
+  html: "devicon-html5-plain",
+  css: "devicon-css3-plain",
+  tailwind: "devicon-tailwindcss-original",
+  bulma: "devicon-bulma-plain",
+  react: "devicon-react-original",
+  nextjs: "devicon-nextjs-original",
+  vuejs: "devicon-vuejs-plain colored",
+  nodejs: "devicon-nodejs-plain",
+  threejs: "devicon-threejs-original",
+  opengl: "devicon-opengl-plain",
+  vite: "devicon-vite-original colored",
+  unix: "devicon-unix-original colored",
+  ios: "devicon-apple-original",
+  android: "devicon-android-plain",
+  git: "devicon-git-plain colored",
+  supabase: "devicon-supabase-plain",
+  framer: "devicon-framermotion-original",
+  jira: "devicon-jira-plain",
+  latex: "devicon-latex-original",
+  inkscape: "devicon-inkscape-plain colored",
+  blender: "devicon-blender-original colored",
+  phaser: "",
+};
