@@ -22,6 +22,7 @@
       "@/*": ["./*"],
       "@data/*": ["./public/data/*"],
       "@components/*": ["./src/components/*"],
+      "@ui/*": ["./src/components/ui/*"],
       "@lib/*": ["./src/lib/*"]
     }
   },
