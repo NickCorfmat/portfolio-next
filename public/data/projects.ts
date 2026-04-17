@@ -160,7 +160,7 @@ export const projects: Project[] = [
       "Led the development of a web-based 2D farming simulator built using Javascript, Phaser, and Vite, featuring automatic and manual saving/loading, undo action systems, multilingual support, and modding capabilities via external DSL. Additionally, the game is fully installable as a progressive web application (PWA) on both desktop and mobile, for offline play.",
     teamSize: 3,
     dates: "Nov 2024 - Dec 2024",
-    technologies: ["typescript", "phaser", "html", "css"],
+    technologies: ["Typescript", "Phaser", "HTML", "CSS"],
   },
   {
     name: "Chess vs. AI",
@@ -172,7 +172,7 @@ export const projects: Project[] = [
       "Built a Chess AI in C++ to compare thousands of possible moves and strategically execute the optimal move. Utilized minimax algorithm, alpha-beta pruning, and transposition tables to significantly reduce AI search complexity. Incorporated the Universal Chess Interface (UCI) to enable the AI to play against other chess engines.",
     teamSize: 1,
     dates: "Nov 2023 - Dec 2023",
-    technologies: ["cpp"],
+    technologies: ["C++"],
   },
   // {
   //   name: "Public Key Cryptography",
