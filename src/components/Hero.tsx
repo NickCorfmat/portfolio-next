@@ -7,7 +7,7 @@ import {
   getProjectsByCategory,
   getRandomProject,
 } from "@lib/projectUtils";
-import { SectionButton } from "@ui/SectionButton";
+import { ActionButton } from "@ui/ActionButton";
 
 export default function Hero() {
   const randomProject = useMemo(() => {
@@ -59,8 +59,17 @@ export default function Hero() {
         </div>
 
         <div className="flex flex-row gap-3 mt-8">
-          <SectionButton label="View Projects" primary scrollToId="projects" />
-          <SectionButton label="About Me" scrollToId="about" />
+          <ActionButton
+            label="View Projects"
+            primary
+            scrollToId="projects"
+            className="font-bold"
+          />
+          <ActionButton
+            label="About Me"
+            scrollToId="about"
+            className="font-bold"
+          />
         </div>
       </div>
     </section>
