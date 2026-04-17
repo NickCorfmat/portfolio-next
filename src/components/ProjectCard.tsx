@@ -49,8 +49,8 @@ export default function ProjectCard({
       <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/70 via-black/40 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
 
       {/* HOVER CONTENT */}
-      <div className="absolute inset-0 flex flex-col justify-end items-start p-5 text-left text-white opacity-0 translate-y-6 gap-2 transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:opacity-100 group-hover:translate-y-0">
-        <h2 className="text-2xl font-bold">{project.name}</h2>
+      <div className="absolute inset-0 flex flex-col justify-end items-start p-6 text-left text-white opacity-0 translate-y-6 gap-2 transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:opacity-100 group-hover:translate-y-0">
+        <h2 className="text-4xl font-bold">{project.name}</h2>
         <p className="text-md opacity-75">
           {project.shortDescription || "View project details"}
         </p>
