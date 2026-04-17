@@ -1,43 +1,11 @@
 "use client";
 
 import Image from "next/image";
+import { useEffect } from "react";
 import { Project } from "@data/projects";
 import { isVideo } from "@lib/projectUtils";
-
-function ActionButton({
-  href,
-  label,
-  icon,
-  primary = false,
-}: {
-  href: string;
-  label: string;
-  icon?: React.ReactNode;
-  primary?: boolean;
-}) {
-  return (
-    <a
-      href={href}
-      target="_blank"
-      rel="noopener noreferrer"
-      className={`
-        flex items-center gap-2
-        px-5 py-2.5 text-sm font-medium
-        rounded-full
-        transition-all duration-300
-        hover:scale-105
-        ${
-          primary
-            ? "bg-white text-black"
-            : "bg-black/10 backdrop-blur-md border border-white/10 hover:bg-black/30"
-        }
-      `}
-    >
-      {label}
-      {icon}
-    </a>
-  );
-}
+import { techIconMap } from "@lib/constants";
+import { ActionButton } from "@ui/ActionButton";
 
 export default function ProjectPopup({
   project,
@@ -70,6 +38,14 @@ export default function ProjectPopup({
     );
   };
 
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape") onClose();
+    };
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, [onClose]);
+
   return (
     <div
       className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 backdrop-blur-md"
@@ -100,7 +76,7 @@ export default function ProjectPopup({
           <div className="flex justify-end pointer-events-auto">
             <button
               onClick={onClose}
-              className="text-white/60 hover:text-white text-lg transition"
+              className="text-white/60 hover:text-white text-xl transition cursor-pointer"
             >
               ✕
             </button>
@@ -121,53 +97,65 @@ export default function ProjectPopup({
               <div className="flex gap-4 text-sm text-white/50 mb-4">
                 <span>{project.dates}</span>
                 <span>•</span>
-                <span>{project.teamSize} devs</span>
+                <span>
+                  {project.teamSize} {project.teamSize > 1 ? `Devs` : `Dev`}
+                </span>
               </div>
 
               <div className="flex flex-wrap gap-2">
-                {project.technologies.map((tech) => (
-                  <span
-                    key={tech}
-                    className="text-xs px-3 py-1 rounded-full bg-white/10"
-                  >
-                    {tech}
-                  </span>
-                ))}
+                {project.technologies.map((tech) => {
+                  const iconSrc = techIconMap[tech];
+                  return (
+                    <div
+                      key={tech}
+                      className="flex items-center gap-1.5 text-xs px-3 py-2 rounded-sm bg-white/20"
+                    >
+                      {iconSrc && (
+                        <Image
+                          src={iconSrc}
+                          alt={tech}
+                          width={14}
+                          height={14}
+                          className="object-contain"
+                          unoptimized
+                        />
+                      )}
+                      <span>{tech}</span>
+                    </div>
+                  );
+                })}
               </div>
             </div>
 
             {/* RIGHT */}
-            <div className="flex flex-col gap-3 items-end pointer-events-auto">
+            <div className="flex flex-row gap-2 items-end pointer-events-auto font-medium">
               {project.url && (
                 <ActionButton
                   href={project.url}
                   label="Play"
                   primary
-                  icon={<i className="fa-regular fa-circle-play" />}
+                  icon={{ type: "i", className: "fa-regular fa-circle-play" }}
                 />
               )}
-
               {project.demo && (
                 <ActionButton
                   href={project.demo}
                   label="Demo"
-                  icon={<i className="fa-solid fa-code" />}
+                  icon={{ type: "i", className: "fa-solid fa-code" }}
                 />
               )}
-
               {project.github && (
                 <ActionButton
                   href={project.github}
                   label="GitHub"
-                  icon={<i className="devicon-github-original" />}
+                  icon={{ type: "i", className: "devicon-github-original" }}
                 />
               )}
-
               {project.trailer && (
                 <ActionButton
                   href={project.trailer}
                   label="Trailer"
-                  icon={<i className="fa-solid fa-clapperboard" />}
+                  icon={{ type: "i", className: "fa-solid fa-clapperboard" }}
                 />
               )}
             </div>
