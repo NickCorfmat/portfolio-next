@@ -4,7 +4,17 @@ import ProjectCard from "./ProjectCard";
 import ProjectPopup from "./ProjectPopup";
 import { Project } from "@/public/data/projects";
 
-function CardGroup({ projects, onClick, suffix, ariaHidden = false }: any) {
+function CardGroup({
+  projects,
+  onClick,
+  suffix,
+  ariaHidden = false,
+}: {
+  projects: Project[];
+  onClick: (project: Project) => void;
+  suffix: string;
+  ariaHidden?: boolean;
+}) {
   return (
     <div className="flex animate-scroll gap-6 pr-6" aria-hidden={ariaHidden}>
       {projects.map((project: Project, i: number) => (
@@ -19,7 +29,7 @@ function CardGroup({ projects, onClick, suffix, ariaHidden = false }: any) {
   );
 }
 
-export default function ProjectCarousel({ projects }: any) {
+export default function ProjectCarousel({ projects }: { projects: Project[] }) {
   const [activeProject, setActiveProject] = useState<Project | null>(null);
 
   return (
