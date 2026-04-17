@@ -3,18 +3,6 @@
 import Image from "next/image";
 import { Project } from "@data/projects";
 import { isVideo } from "@lib/projectUtils";
-import { techIconMap } from "../lib/constants";
-
-function TechTag({ tech }: { tech: string }) {
-  const iconClass = techIconMap[tech.toLowerCase()];
-
-  return (
-    <div className="flex items-center gap-1 px-2 py-[5px] rounded-md bg-black/40 backdrop-blur-sm text-white text-[11px] font-medium">
-      {iconClass && <i className={`${iconClass} text-sm`} />}
-      <span>{tech}</span>
-    </div>
-  );
-}
 
 export default function ProjectCard({
   project,
@@ -66,14 +54,6 @@ export default function ProjectCard({
         <p className="text-md opacity-75">
           {project.shortDescription || "View project details"}
         </p>
-        {/* TECH TAGS */}
-        {project.technologies && (
-          <div className="flex flex-wrap gap-2 z-10">
-            {project.technologies.map((tech) => (
-              <TechTag key={tech} tech={tech} />
-            ))}
-          </div>
-        )}
       </div>
     </div>
   );
