@@ -34,7 +34,7 @@ export const projects: Project[] = [
       "Adapted the fictionalized game 'Fight Fighters' into a two-player fighting game using JavaScript and Phaser for a class project. The game is directly inspired from S1 E10 of the Disney Channel television series, 'Gravity Falls.'",
     teamSize: 2,
     dates: "Feb 2024 - Mar 2024",
-    technologies: ["phaser", "javascript", "html"],
+    technologies: ["Phaser", "JavaScript", "HTML"],
   },
   {
     name: "Rogue Eagle",
@@ -47,7 +47,7 @@ export const projects: Project[] = [
       "Made an endless runner game using Javascript, Phaser, and HTML for a class project. Employed one-dimensional Perlin noise to generate infinitely varying and unique terrain on every run.",
     teamSize: 1,
     dates: "Feb 2024",
-    technologies: ["phaser", "javascript", "html"],
+    technologies: ["Phaser", "JavaScript", "HTML"],
   },
   {
     name: "Woofmart",
@@ -62,7 +62,7 @@ export const projects: Project[] = [
       "Worked with a team of 5 students to create a cartoon-like endless runner in Unity, where players take on the role of a loose dog with the goal of unleashing chaos in a supermarket, while fleeing AI employee enemies.",
     teamSize: 5,
     dates: "Nov 2024 - Dec 2024",
-    technologies: ["unity", "csharp", "blender"],
+    technologies: ["Unity", "C#", "Blender"],
   },
   {
     name: "will you do it?",
@@ -75,7 +75,7 @@ export const projects: Project[] = [
       "Developed a short narrative game with two other students in 2 weeks, as part of a rapid prototyping class at UCSC.",
     teamSize: 3,
     dates: "Apr 2024",
-    technologies: ["phaser", "javascript", "html"],
+    technologies: ["Phaser", "JavaScript", "HTML"],
   },
   {
     name: "Piano Platformer",
@@ -88,7 +88,7 @@ export const projects: Project[] = [
       "A short game developed at UCSC in 2 weeks as part of a rapid prototyping class that adopts an unconventional approach to typical platformer controller inputs.",
     teamSize: 3,
     dates: "May 2024",
-    technologies: ["phaser", "javascript", "html"],
+    technologies: ["phaser", "JavaScript", "HTML"],
   },
   {
     name: "Wail of the Sirenheads",
@@ -102,7 +102,7 @@ export const projects: Project[] = [
       "Rapidly prototyped a first-person horror game in Unreal Engine 5 with a team of three students at UCSC over two weeks. This experience drops players into a dark, eerie forest, designed to evoke deep foreboding through the threat of unexpected creature encounters.",
     teamSize: 3,
     dates: "Apr 2024 - May 2024",
-    technologies: ["unrealengine", "blender"],
+    technologies: ["Unreal Engine", "Blender"],
   },
   {
     name: "Modernism Simulator",
@@ -116,7 +116,7 @@ export const projects: Project[] = [
       "Developed a short, first-person walking simulator in Unity that immerses players in the scene of a cold and monotonous, yet tranquil environment of a modernist world.",
     teamSize: 1,
     dates: "Nov 2024",
-    technologies: ["unity", "csharp", "blender"],
+    technologies: ["Unity", "C#", "Blender"],
   },
   {
     name: "Shape Up",
@@ -131,7 +131,7 @@ export const projects: Project[] = [
       "Developed and shipped a mobile puzzle game on iOS/Android as part of a 5-student capstone project. Aided in level design, UI/UX, player and device metrics tracking, localization, persistent data, and iOS deployment pipeline.",
     teamSize: 5,
     dates: "Apr 2025 - Jun 2025",
-    technologies: ["unity", "csharp", "jira", "ios", "android"],
+    technologies: ["Unity", "C#", "Jira", "iOS", "Android"],
   },
   {
     name: "Crucible of Elements",
@@ -147,7 +147,7 @@ export const projects: Project[] = [
       "Developed a 2v2 online arena battler in Unity over 10 weeks as part of an 8-student cross-disciplinary capstone team. Implemented character mechanics, integrated multiplayer NetCode, designed the map from scratch, and optimized GPU and storage performance.",
     teamSize: 8,
     dates: "Jan 2025 - Mar 2025",
-    technologies: ["unity", "csharp", "blender"],
+    technologies: ["Unity", "C#", "Blender"],
   },
   {
     name: "Space-Mine",
@@ -160,11 +160,11 @@ export const projects: Project[] = [
       "Led the development of a web-based 2D farming simulator built using Javascript, Phaser, and Vite, featuring automatic and manual saving/loading, undo action systems, multilingual support, and modding capabilities via external DSL. Additionally, the game is fully installable as a progressive web application (PWA) on both desktop and mobile, for offline play.",
     teamSize: 3,
     dates: "Nov 2024 - Dec 2024",
-    technologies: ["Typescript", "Phaser", "HTML", "CSS"],
+    technologies: ["TypeScript", "Phaser", "HTML", "CSS"],
   },
   {
     name: "Chess vs. AI",
-    category: ["game"],
+    category: ["program"],
     media: "/data/videos/chessvsai.mp4",
     github: "https://github.com/NickCorfmat/ChessAI",
     shortDescription: "Chess but with a smart opponent...",
@@ -204,7 +204,7 @@ export const projects: Project[] = [
       "Developed a full-stack recipe sharing app using py4web with a team of 6 students. Built RESTful APIs for CRUD operations, integrated multi-field search, connected frontend to backend services, and enforced author-only editing on the server side.",
     teamSize: 6,
     dates: "May 2025 - Jun 2025",
-    technologies: ["javascript", "html", "bulma", "py4web"],
+    technologies: ["JavaScript", "HTML", "Bulma", "Py4Web"],
   },
   {
     name: "WebGL Mario World",
@@ -217,7 +217,7 @@ export const projects: Project[] = [
       "Developed an interactive 3D demo using WebGL and GLSL shaders for diffuse, specular, and spotlight lighting. Created dynamic lighting controls (position, color, enable/disable) using HTML and CSS with live scene updates. Built a camera system with full 3D navigation (forward/back, strafe, pan, tilt) using vector math and rotation matrices. Optimized texture loading, UV mapping, and materials through efficient GLSL uniform and buffer handling.",
     teamSize: 1,
     dates: "Feb 2025 - Mar 2025",
-    technologies: ["javascript", "opengl", "html", "css"],
+    technologies: ["JavaScript", "OpenGL", "HTML", "CSS"],
   },
   {
     name: "Polaroid Onestep SX-70",
@@ -226,7 +226,7 @@ export const projects: Project[] = [
     url: "https://beta.ideas.lego.com/product-ideas/200dd32e-8ec8-44aa-8f7d-e4dcc6f74e5c",
     teamSize: 2,
     dates: "Sept 2021 - Jun 2025",
-    technologies: ["inkscape", "blender"],
+    technologies: ["Inkscape", "Blender"],
   },
   {
     name: 'Blackpink "Lovesick Girls"',
@@ -235,7 +235,7 @@ export const projects: Project[] = [
     url: "https://beta.ideas.lego.com/product-ideas/2094aa81-6b2a-41e9-ac2c-ebb9969285cf",
     teamSize: 1,
     dates: "Sept 2021 - Jun 2025",
-    technologies: ["inkscape", "blender"],
+    technologies: ["Inkscape", "Blender"],
   },
   {
     name: 'Blackpink "As If It\'s Your Last"',
@@ -244,7 +244,7 @@ export const projects: Project[] = [
     url: "https://ideas.lego.com/projects/cab13581-6986-41b5-bf93-907a474a07df",
     teamSize: 1,
     dates: "Sept 2021 - Jun 2025",
-    technologies: ["inkscape", "blender"],
+    technologies: ["Inkscape", "Blender"],
   },
   {
     name: 'Madison Beer "Reckless"',
@@ -253,7 +253,7 @@ export const projects: Project[] = [
     url: "https://beta.ideas.lego.com/product-ideas/9b9e3504-07dd-4060-a139-4bf98b07f7a7",
     teamSize: 1,
     dates: "Sept 2021 - Jun 2025",
-    technologies: ["inkscape", "blender"],
+    technologies: ["Inkscape", "Blender"],
   },
   {
     name: "The Polar Express",
@@ -262,7 +262,7 @@ export const projects: Project[] = [
     url: "https://beta.ideas.lego.com/product-ideas/d589b6af-92c0-44ef-90c7-38dc4a8a9b2d",
     teamSize: 2,
     dates: "Sept 2021 - Jun 2025",
-    technologies: ["inkscape", "blender"],
+    technologies: ["Inkscape", "Blender"],
   },
   {
     name: "Interstellar",
@@ -271,7 +271,7 @@ export const projects: Project[] = [
     url: "https://beta.ideas.lego.com/product-ideas/b0c8ccf3-8d15-4d13-b69a-c836daeee9c3",
     teamSize: 2,
     dates: "Sept 2021 - Jun 2025",
-    technologies: ["inkscape", "blender"],
+    technologies: ["Inkscape", "Blender"],
   },
   {
     name: "Miffy",
@@ -280,6 +280,6 @@ export const projects: Project[] = [
     url: "https://beta.ideas.lego.com/product-ideas/2329f799-f3bd-4c1e-83fd-49443332ae96",
     teamSize: 1,
     dates: "Sept 2021 - Jun 2025",
-    technologies: ["inkscape", "blender"],
+    technologies: ["Inkscape", "Blender"],
   },
 ];
