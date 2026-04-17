@@ -1,15 +1,19 @@
 "use client";
 
+import { useMemo } from "react";
 import Image from "next/image";
 import {
   isVideo,
   getProjectsByCategory,
   getRandomProject,
 } from "@lib/projectUtils";
+import { SectionButton } from "@ui/SectionButton";
 
 export default function Hero() {
-  const featuredProjects = getProjectsByCategory(["featured"]);
-  const randomProject = getRandomProject(featuredProjects);
+  const randomProject = useMemo(() => {
+    const featuredProjects = getProjectsByCategory(["featured"]);
+    return getRandomProject(featuredProjects);
+  }, []);
 
   if (!randomProject) return null;
 
@@ -42,15 +46,22 @@ export default function Hero() {
       <div className="absolute inset-0 bg-gradient-to-r from-black/85 to-transparent z-[1]" />
 
       {/* CONTENT */}
-      <div className="relative z-[2] flex w-full max-w-[1400px] h-full flex-col justify-center items-start text-left px-8">
-        <h3 className="text-[32px] text-white/60">Hey, I’m</h3>
+      <div className="relative z-[2] flex w-full max-w-[1300px] h-full flex-col justify-end items-center text-center mb-[25%] px-8">
+        <div className="flex flex-col items-center gap-3">
+          <h1 className="text-white text-[72px] leading-[0.95] tracking-tight">
+            NICK CORFMAT
+          </h1>
 
-        <h1 className="text-white text-[80px] m-0">Nick Corfmat</h1>
+          <h2 className="text-white/80 text-2xl md:text-3xl tracking-wide">
+            Software Engineer <span className="text-white/40">+</span> Game
+            Developer
+          </h2>
+        </div>
 
-        <p className="w-[500px] text-2xl leading-relaxed mt-0 mb-10 animate-rainbow-flow bg-[linear-gradient(90deg,#ff595e,#ff924c,#ffca3a,#8ac926,#1982c4,#6a4c93,#ff595e)] bg-[length:300%_100%] bg-clip-text text-transparent">
-          Creating interactive experiences where design and engineering meet{" "}
-          {`<`}3
-        </p>
+        <div className="flex flex-row gap-3 mt-8">
+          <SectionButton label="View Projects" primary scrollToId="projects" />
+          <SectionButton label="About Me" scrollToId="about" />
+        </div>
       </div>
     </section>
   );
