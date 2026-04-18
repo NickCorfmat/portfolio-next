@@ -5,7 +5,7 @@ const TAG_SIZE: "sm" | "md" | "lg" = "lg";
 
 const sizeMap = {
   sm: { icon: 36, padding: "p-2.5", label: "text-[9px]", gap: "gap-1.5" },
-  md: { icon: 50, padding: "p-4", label: "text-[11px]", gap: "gap-2" },
+  md: { icon: 50, padding: "p-3", label: "text-[11px]", gap: "gap-2" },
   lg: { icon: 70, padding: "p-4.25", label: "text-[13px]", gap: "gap-2.5" },
 };
 
@@ -46,12 +46,12 @@ function TechTag({ tech }: { tech: string }) {
 export default function Skills() {
   return (
     <section id="skills" className="w-full px-8 pt-20">
-      <div className="mx-auto w-full max-w-[1200px]">
-        <p className="text-center text-3xl text-white/85 mt-3 mb-10">
-          My Tech Stack.
+      <div className="mx-auto w-full max-w-[1200px] flex flex-col flex-start">
+        <p className="text-4xl text-white font-semibold tracking-tight mb-8">
+          My Tech Stack:
         </p>
 
-        <div className="flex flex-row flex-wrap justify-center items-center gap-4">
+        <div className="flex flex-row flex-wrap justify-start items-center gap-3">
           {Object.entries(techIconMap).map(([name]) => (
             <TechTag key={name} tech={name} />
           ))}
