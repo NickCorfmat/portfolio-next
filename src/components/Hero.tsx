@@ -53,7 +53,7 @@ export default function Hero() {
           </h1>
 
           <h2 className="text-white/80 text-2xl md:text-3xl tracking-wide">
-            Software Engineer <span className="text-white/40">+</span> Game
+            Software Engineer <span className="text-white/40">/</span> Game
             Developer
           </h2>
         </div>
