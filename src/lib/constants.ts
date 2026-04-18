@@ -3,7 +3,7 @@ export const NAVBAR_ITEMS = [
   { label: "about", href: "/#about" },
   { label: "projects", href: "/#projects" },
   { label: "games", href: "/#games" },
-  { label: "hobbies", href: "/#hobbies" },
+  // { label: "hobbies", href: "/#hobbies" },
 ];
 
 export const techIconMap: Record<string, string> = {
@@ -86,6 +86,4 @@ export const techIconMap: Record<string, string> = {
 
   Blender:
     "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/blender/blender-original.svg",
-
-  Phaser: "",
 };
