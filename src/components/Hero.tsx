@@ -20,7 +20,7 @@ export default function Hero() {
   return (
     <section
       id="home"
-      className="relative w-full h-[80vh] min-h-[600px] flex items-center justify-center overflow-hidden"
+      className="relative w-full h-[100vh] min-h-[600px] flex items-center justify-center overflow-hidden"
     >
       {/* BACKGROUND MEDIA */}
       {isVideo(randomProject.media) ? (
@@ -46,7 +46,7 @@ export default function Hero() {
       <div className="absolute inset-0 bg-gradient-to-r from-black/85 to-transparent z-[1]" />
 
       {/* CONTENT */}
-      <div className="relative z-[2] flex w-full max-w-[1300px] h-full flex-col justify-end items-center text-center mb-[25%] px-8">
+      <div className="relative z-[2] flex w-full max-w-[1300px] h-full flex-col justify-center items-center text-center px-8">
         <div className="flex flex-col items-center gap-3">
           <h1 className="text-white text-[72px] leading-[0.95] tracking-tight">
             NICK CORFMAT
