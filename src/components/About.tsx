@@ -1,5 +1,29 @@
 import Image from "next/image";
 import profile_picture from "@data/images/profile.jpg";
+import { SectionHeader } from "./ui/SectionHeader";
+
+const links = [
+  {
+    href: "mailto:nfcorfmat@gmail.com",
+    icon: "fa-regular fa-envelope",
+    label: "Email",
+  },
+  {
+    href: "https://github.com/NickCorfmat",
+    icon: "devicon-github-original",
+    label: "GitHub",
+  },
+  {
+    href: "https://www.linkedin.com/in/nicolascorfmat/",
+    icon: "devicon-linkedin-plain",
+    label: "LinkedIn",
+  },
+  {
+    href: "/data/docs/Nicolas_Corfmat_Resume.pdf",
+    icon: "fa-regular fa-file-lines",
+    label: "Resume",
+  },
+];
 
 export default function About() {
   return (
@@ -7,73 +31,65 @@ export default function About() {
       id="about"
       className="w-full flex flex-col items-center justify-center px-8 pt-20"
     >
-      <div className="w-full max-w-[1200px] rounded-3xl p-8">
-        <h2 className="text-center text-3xl text-white">About Me</h2>
-        <h1 className="text-center text-white/65 text-4xl mt-3 mb-10">
-          Code, Design, and Game Development.
-        </h1>
+      <div className="w-full max-w-[1300px]">
+        <SectionHeader label="About Me" />
 
-        <div className="flex flex-col md:flex-row items-center justify-center gap-12">
+        <div className="flex flex-col md:flex-row justify-evenly items-center gap-10">
           <Image
-            className="w-[340px] h-[352px] rounded-2xl object-cover border border-white/20"
+            className="w-[300px] h-[360px] rounded-2xl object-cover"
             src={profile_picture}
             alt="profile picture"
           />
 
-          <div className="flex-1 max-w-[650px] flex flex-col gap-6">
-            <p className="text-lg text-white/85 leading-relaxed">
-              I’m a Computer Science: Game Design graduate from UC Santa Cruz
-              focused on software engineering, game development, and building
-              creative interactive experiences. I’m especially interested in
-              opportunities that blend creative problem-solving, inventive
-              design, and cross-disciplinary collaboration.
-            </p>
+          <div className="flex flex-col gap-8">
+            <div>
+              <h2 className="text-4xl text-white font-semibold tracking-tight mb-4">
+                Code, Design,
+                <br />
+                and Game Development.
+              </h2>
+              <p className="text-lg text-white/60 leading-relaxed max-w-[580px]">
+                I'm a Computer Science: Game Design graduate from UC Santa Cruz
+                focused on software engineering, game development, and building
+                creative interactive experiences. I'm especially interested in
+                opportunities that blend creative problem-solving, inventive
+                design, and cross-disciplinary collaboration.
+              </p>
+            </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              <div className="rounded-2xl border border-white/10 bg-white/5 p-5">
-                <h3 className="text-white text-lg mb-2">Education</h3>
-                <p className="text-white/75 leading-relaxed">
-                  <span className="block font-semibold text-white">
-                    University of California, Santa Cruz
-                  </span>
+            <div className="flex items-start gap-4 p-5 rounded-2xl border border-white/10 bg-white/5 max-w-[420px]">
+              <div className="mt-0.5 w-9 h-9 shrink-0 flex items-center justify-center rounded-lg bg-white/10 text-white/60">
+                <i className="fa-solid fa-graduation-cap text-sm" />
+              </div>
+              <div>
+                <p className="text-white font-medium leading-snug">
+                  University of California, Santa Cruz
+                </p>
+                <p className="text-white/50 text-sm mt-0.5">
                   B.S. Computer Science: Game Design
                 </p>
               </div>
-
-              <div className="rounded-2xl border border-white/10 bg-white/5 p-5">
-                <h3 className="text-white text-lg mb-3">Contact</h3>
-
-                <div className="flex items-center gap-4 text-white/70">
-                  <a
-                    href="mailto:nfcorfmat@gmail.com"
-                    className="w-10 h-10 flex items-center justify-center rounded-lg border border-white/10 hover:border-white/40 hover:text-white transition"
-                    aria-label="Email"
-                  >
-                    <i className="fa-regular fa-envelope text-lg"></i>
-                  </a>
-
-                  <a
-                    href="https://github.com/NickCorfmat"
-                    target="_blank"
-                    rel="noreferrer"
-                    className="w-10 h-10 flex items-center justify-center rounded-lg border border-white/10 hover:border-white/40 hover:text-white transition"
-                    aria-label="GitHub"
-                  >
-                    <i className="devicon-github-original text-lg"></i>
-                  </a>
-
-                  <a
-                    href="https://www.linkedin.com/in/nicolascorfmat/"
-                    target="_blank"
-                    rel="noreferrer"
-                    className="w-10 h-10 flex items-center justify-center rounded-lg border border-white/10 hover:border-white/40 hover:text-white transition"
-                    aria-label="LinkedIn"
-                  >
-                    <i className="devicon-linkedin-plain text-lg"></i>
-                  </a>
-                </div>
-              </div>
             </div>
+          </div>
+
+          <div className="flex flex-col gap-3">
+            {links.map((link) => (
+              <a
+                key={link.label}
+                href={link.href}
+                target={
+                  link.href.startsWith("http") || link.href.endsWith(".pdf")
+                    ? "_blank"
+                    : undefined
+                }
+                rel="noreferrer"
+                aria-label={link.label}
+                className="w-[100%] flex-1 flex items-center justify-center gap-2 px-4 py-3 rounded-xl border border-white/10 bg-white/5 font-medium text-lg text-white/80 hover:text-white hover:border-white/30 hover:bg-white/10 transition-all duration-200"
+              >
+                <i className={`${link.icon} text-lg`} />
+                <span>{link.label}</span>
+              </a>
+            ))}
           </div>
         </div>
       </div>
