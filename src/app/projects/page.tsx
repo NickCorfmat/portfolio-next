@@ -10,14 +10,14 @@ export default function ProjectPage() {
   const projects = getProjectsByCategory(["game", "program"]);
 
   return (
-    <section className="w-full py-24 flex flex-col items-center px-6">
-      <div className="grid gap-12 w-full justify-center [grid-template-columns:repeat(auto-fill,400px)]">
+    <section className="w-full py-24 flex flex-col items-center px-6 mt-1">
+      <div className="grid gap-8 w-full justify-center [grid-template-columns:repeat(auto-fill,400px)]">
         {projects.map((project) => (
           <ProjectCard
             key={project.name}
             project={project}
             onClick={() => setActiveProject(project)}
-            className="w-[400px] aspect-[400/260]"
+            className="w-[400px] h-[250px]"
           />
         ))}
       </div>
