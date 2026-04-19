@@ -28,7 +28,7 @@ export function Navbar() {
     }
 
     // already on home, just scroll
-    const id = item.label === "home" ? "home" : item.label;
+    const id = item.href === "/" ? "home" : item.href.replace("/#", "");
     document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
   };
 
