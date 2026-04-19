@@ -25,7 +25,7 @@ export default function Hero() {
       {/* BACKGROUND MEDIA */}
       {isVideo(randomProject.media) ? (
         <video
-          className="absolute inset-0 w-full h-full object-cover blur-[2px]"
+          className="absolute inset-0 w-full h-full object-cover"
           autoPlay
           muted
           loop
@@ -52,8 +52,8 @@ export default function Hero() {
             NICK CORFMAT
           </h1>
 
-          <h2 className="text-white/80 text-2xl md:text-3xl tracking-wide">
-            Software Engineer <span className="text-white/40">/</span> Game
+          <h2 className="text-2xl md:text-3xl text-white/70">
+            Software Engineer <span className="text-white/60">/</span> Game
             Developer
           </h2>
         </div>
