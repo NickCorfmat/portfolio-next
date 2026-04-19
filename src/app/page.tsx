@@ -4,6 +4,7 @@ import Games from "@components/Games";
 import About from "@components/About";
 import Skills from "@components/Skills";
 import Hobbies from "@components/Hobbies";
+import Contact from "@components/Contact";
 
 export default function Home() {
   return (
@@ -14,6 +15,7 @@ export default function Home() {
       <Projects />
       <Games />
       {/* <Hobbies /> */}
+      <Contact />
     </div>
   );
 }
