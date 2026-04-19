@@ -3,7 +3,31 @@ export const NAVBAR_ITEMS = [
   { label: "about", href: "/#about" },
   { label: "projects", href: "/#projects" },
   { label: "games", href: "/#games" },
+  { label: "contact", href: "/#contact" },
   // { label: "hobbies", href: "/#hobbies" },
+];
+
+export const CONTACT_LINKS = [
+  {
+    href: "mailto:nfcorfmat@gmail.com",
+    icon: "fa-regular fa-envelope",
+    label: "Email",
+  },
+  {
+    href: "https://github.com/NickCorfmat",
+    icon: "devicon-github-original",
+    label: "GitHub",
+  },
+  {
+    href: "https://www.linkedin.com/in/nicolascorfmat/",
+    icon: "devicon-linkedin-plain",
+    label: "LinkedIn",
+  },
+  {
+    href: "/data/docs/Nicolas_Corfmat_Resume.pdf",
+    icon: "fa-regular fa-file-lines",
+    label: "Resume",
+  },
 ];
 
 export const techIconMap: Record<string, string> = {
