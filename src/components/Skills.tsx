@@ -1,58 +1,47 @@
 import Image from "next/image";
 import { techIconMap } from "@lib/constants";
 
-const TAG_SIZE: "sm" | "md" | "lg" = "lg";
-
-const sizeMap = {
-  sm: { icon: 36, padding: "p-2.5", label: "text-[9px]", gap: "gap-1.5" },
-  md: { icon: 50, padding: "p-3", label: "text-[11px]", gap: "gap-2" },
-  lg: { icon: 70, padding: "p-4.25", label: "text-[13px]", gap: "gap-2.5" },
-};
-
 function TechTag({ tech }: { tech: string }) {
   const iconSrc = techIconMap[tech];
-  const { icon, padding, label, gap } = sizeMap[TAG_SIZE];
 
   return (
-    <div
-      className={`flex flex-col items-center justify-center ${gap} transition-all duration-300 hover:scale-105`}
-    >
-      <div
-        className={`group aspect-square flex flex-col items-center justify-center ${padding}`}
-      >
+    <div className="flex items-center gap-2 p-3 rounded-xl border border-white/10 bg-white/10 hover:bg-white/10 hover:border-white/20 transition-all duration-200 cursor-default">
+      <div className="w-5 h-5 flex-shrink-0 flex items-center justify-center">
         {iconSrc ? (
           <Image
             src={iconSrc}
-            width={icon}
-            height={icon}
-            style={{ width: icon, height: icon }}
+            width={20}
+            height={20}
+            style={{ width: 20, height: 20 }}
             className="object-contain"
             alt={`${tech} icon`}
             unoptimized
           />
         ) : (
-          <div className="size-10 rounded-lg bg-white/10" />
+          <div className="w-5 h-5 rounded bg-white/10" />
         )}
       </div>
-      <span
-        className={`${label} text-white/70 uppercase tracking-wider text-center`}
-      >
-        {tech}
-      </span>
+      <span className="text-md text-white/85 whitespace-nowrap">{tech}</span>
     </div>
   );
 }
 
 export default function Skills() {
   return (
-    <section id="skills" className="w-full px-8 pt-20">
-      <div className="mx-auto w-full max-w-[1200px] flex flex-col flex-start">
-        <p className="text-4xl text-white font-semibold tracking-tight mb-8">
-          My Tech Stack:
-        </p>
+    <section id="skills" className="w-full px-8 p-18 bg-black/50">
+      <div className="mx-auto w-full max-w-[1200px] flex flex-col md:flex-row justify-between gap-8">
+        <div>
+          <h2 className="text-4xl font-semibold tracking-tight text-white mb-6">
+            My Tech Stack
+          </h2>
+          <p className="text-lg text-white/80 leading-relaxed max-w-[600px]">
+            Everything from web development and software engineering, to game
+            development and design - I take on a variety of skills.
+          </p>
+        </div>
 
-        <div className="flex flex-row flex-wrap justify-start items-center gap-3">
-          {Object.entries(techIconMap).map(([name]) => (
+        <div className="w-full flex flex-wrap gap-3 justify-center">
+          {Object.keys(techIconMap).map((name) => (
             <TechTag key={name} tech={name} />
           ))}
         </div>
