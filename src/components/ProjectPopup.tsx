@@ -76,7 +76,7 @@ export default function ProjectPopup({
           <div className="flex justify-end pointer-events-auto">
             <button
               onClick={onClose}
-              className="text-white/60 hover:text-white text-xl transition cursor-pointer"
+              className="absolute top-6 right-6 bg-white/10 text-white text-lg border border-white/30 backdrop-blur-sm hover:bg-white/20 px-3.5 py-1.5 rounded-xl cursor-pointer"
             >
               ✕
             </button>
@@ -137,6 +137,13 @@ export default function ProjectPopup({
                   icon={{ type: "i", className: "fa-regular fa-circle-play" }}
                 />
               )}
+              {project.trailer && (
+                <ActionButton
+                  href={project.trailer}
+                  label="Trailer"
+                  icon={{ type: "i", className: "fa-solid fa-clapperboard" }}
+                />
+              )}
               {project.demo && (
                 <ActionButton
                   href={project.demo}
@@ -149,13 +156,6 @@ export default function ProjectPopup({
                   href={project.github}
                   label="GitHub"
                   icon={{ type: "i", className: "devicon-github-original" }}
-                />
-              )}
-              {project.trailer && (
-                <ActionButton
-                  href={project.trailer}
-                  label="Trailer"
-                  icon={{ type: "i", className: "fa-solid fa-clapperboard" }}
                 />
               )}
             </div>
