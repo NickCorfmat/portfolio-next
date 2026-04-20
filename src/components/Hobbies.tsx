@@ -1,14 +1,14 @@
-"use client";
+'use client';
 
-import { useState } from "react";
-import { Project } from "@data/projects";
-import { getProjectsByCategory } from "@lib/projectUtils";
-import ProjectCard from "./ProjectCard";
-import ProjectPopup from "./ProjectPopup";
-import { SectionHeader } from "./ui/SectionHeader";
+import { useState } from 'react';
+import { Project } from '@data/projects';
+import { getProjectsByCategory } from '@lib/projectUtils';
+import ProjectCard from './ProjectCard';
+import ProjectPopup from './ProjectPopup';
+import { SectionHeader } from '@ui/SectionHeader';
 
 export default function Hobbies() {
-  const hobbies = getProjectsByCategory(["lego_ideas"]);
+  const hobbies = getProjectsByCategory(['lego_ideas']);
   const [activeProject, setActiveProject] = useState<Project | null>(null);
 
   return (
@@ -43,7 +43,7 @@ export default function Hobbies() {
 
       <div className="mx-auto w-full max-w-[1200px]">
         <SectionHeader label="Hobbies" />
-        <p className="text-center text-white/65 mt-3 mb-10">
+        <p className="mt-3 mb-10 text-center text-white/65">
           LEGO category showcase
         </p>
 

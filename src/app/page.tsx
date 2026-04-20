@@ -1,10 +1,10 @@
-import Hero from "@components/Hero";
-import Projects from "@components/Projects";
-import Games from "@components/Games";
-import About from "@components/About";
-import Skills from "@components/Skills";
-import Hobbies from "@components/Hobbies";
-import Contact from "@components/Contact";
+import Hero from '@components/Hero';
+import Projects from '@components/Projects';
+import Games from '@components/Games';
+import About from '@components/About';
+import Skills from '@components/Skills';
+import Hobbies from '@components/Hobbies';
+import Contact from '@components/Contact';
 
 export default function Home() {
   return (
