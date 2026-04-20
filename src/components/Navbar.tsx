@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
 import { NAVBAR_ITEMS } from "@lib/constants";
+import { scrollToSection } from "@lib/scrollToSection";
 
 export function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -15,23 +16,6 @@ export function Navbar() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  const handleClick = (
-    e: React.MouseEvent,
-    item: { label: string; href: string },
-  ) => {
-    e.preventDefault();
-
-    if (pathname !== "/") {
-      // navigate home, then scroll after page loads
-      window.location.href = item.href;
-      return;
-    }
-
-    // already on home, just scroll
-    const id = item.href === "/" ? "home" : item.href.replace("/#", "");
-    document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
-  };
-
   return (
     <div
       className={`fixed top-0 left-0 w-full h-[75px] flex flex-row justify-end items-center px-12 text-lg font-bold text-white gap-8 z-[1000] transition-colors duration-300 ${
@@ -42,7 +26,7 @@ export function Navbar() {
         <Link
           key={item.label}
           href={item.href}
-          onClick={(e) => handleClick(e, item)}
+          onClick={(e) => scrollToSection(e, item, pathname)}
         >
           {item.label.toUpperCase()}
         </Link>
