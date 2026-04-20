@@ -28,15 +28,18 @@ function TechTag({ tech }: { tech: string }) {
 
 export default function Skills() {
   return (
-    <section id="skills" className="w-full px-8 p-18 bg-black/50">
-      <div className="mx-auto w-full max-w-[1200px] flex flex-col md:flex-row justify-between gap-8">
+    <section
+      id="skills"
+      className="w-full min-h-[500px] px-8 p-18 flex flex-col justify-center items-center"
+    >
+      <div className="mx-auto w-full max-w-[1200px] flex flex-col md:flex-row justify-between gap-8 bg-black/20 p-12 rounded-4xl">
         <div>
-          <h2 className="text-4xl font-semibold tracking-tight text-white mb-6">
-            My Tech Stack
+          <h2 className="text-[48px] leading-15 font-semibold tracking-tight text-white mb-6">
+            Technologies
           </h2>
           <p className="text-lg text-white/80 leading-relaxed max-w-[600px]">
-            Everything from web development and software engineering, to game
-            development and design - I take on a variety of skills.
+            My growing collection of languages, frameworks, and tools I use to
+            design, build, and ship reliable software applications.
           </p>
         </div>
 
