@@ -1,17 +1,19 @@
-"use client";
+'use client';
 
-import { useMemo } from "react";
-import Image from "next/image";
+import { useMemo, useState } from 'react';
+import Image from 'next/image';
 import {
   isVideo,
   getProjectsByCategory,
   getRandomProject,
-} from "@lib/projectUtils";
-import { ActionButton } from "@ui/ActionButton";
+} from '@lib/projectUtils';
+import { ActionButton } from '@ui/ActionButton';
 
 export default function Hero() {
+  const [mediaLoaded, setMediaLoaded] = useState(false);
+
   const randomProject = useMemo(() => {
-    const featuredProjects = getProjectsByCategory(["featured"]);
+    const featuredProjects = getProjectsByCategory(['featured']);
     return getRandomProject(featuredProjects);
   }, []);
 
@@ -20,16 +22,17 @@ export default function Hero() {
   return (
     <section
       id="home"
-      className="relative w-full h-[100vh] min-h-[600px] flex items-center justify-center overflow-hidden"
+      className="relative flex h-[100vh] min-h-[600px] w-full items-center justify-center overflow-hidden"
     >
       {/* BACKGROUND MEDIA */}
       {isVideo(randomProject.media) ? (
         <video
-          className="absolute inset-0 w-full h-full object-cover"
+          className={`absolute inset-0 h-full w-full object-cover transition-opacity duration-1000 ${mediaLoaded ? 'opacity-100' : 'opacity-0'}`}
           autoPlay
           muted
           loop
           playsInline
+          onCanPlay={() => setMediaLoaded(true)}
         >
           <source src={randomProject.media} type="video/mp4" />
         </video>
@@ -38,27 +41,32 @@ export default function Hero() {
           src={randomProject.media}
           alt={randomProject.name}
           fill
-          className="object-cover blur-[2px]"
+          className={`object-cover blur-[2px] transition-opacity duration-1000 ${mediaLoaded ? 'opacity-100' : 'opacity-0'}`}
+          onLoad={() => setMediaLoaded(true)}
         />
       )}
 
+      <div
+        className={`absolute inset-0 z-[1] bg-black transition-opacity duration-1000 ${mediaLoaded ? 'opacity-0' : 'opacity-100'}`}
+      />
+
       {/* DARK OVERLAY */}
-      <div className="absolute inset-0 bg-gradient-to-r from-black/85 to-transparent z-[1]" />
+      <div className="absolute inset-0 z-[2] bg-gradient-to-r from-black/85 to-transparent" />
 
       {/* CONTENT */}
-      <div className="relative z-[2] flex w-full max-w-[1300px] h-full flex-col justify-center items-center text-center px-8">
+      <div className="relative z-[3] flex h-full w-full max-w-[1300px] flex-col items-center justify-center px-8 text-center">
         <div className="flex flex-col items-center gap-3">
-          <h1 className="text-white text-[72px] leading-[0.95] tracking-tight">
+          <h1 className="text-[72px] leading-[0.95] tracking-tight text-white">
             NICK CORFMAT
           </h1>
 
-          <h2 className="text-2xl md:text-3xl text-white/70">
+          <h2 className="text-2xl text-white/70 md:text-3xl">
             Software Engineer <span className="text-white/60">/</span> Game
             Developer
           </h2>
         </div>
 
-        <div className="flex flex-row gap-3 mt-8">
+        <div className="mt-8 flex flex-row gap-3">
           <ActionButton
             label="View Projects"
             primary
