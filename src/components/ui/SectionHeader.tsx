@@ -9,7 +9,6 @@ export function SectionHeader({ label, className = "" }: SectionHeaderProps) {
       <span className="text-md tracking-[0.1em] uppercase text-white shrink-0">
         {label}
       </span>
-      <div className="h-px flex-1 bg-white/10" />
     </div>
   );
 }
