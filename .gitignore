@@ -25,29 +25,29 @@
 *.pem
 
 # image assets
-*.ico
-*.png
-*.jpg
-*.jpeg
-*.gif
-*.bmp
-*.tiff
-*.ico
-*.webp
-*.svg
-*.pdf
+# *.ico
+# *.png
+# *.jpg
+# *.jpeg
+# *.gif
+# *.bmp
+# *.tiff
+# *.ico
+# *.webp
+# *.svg
+# *.pdf
 
 # video assets
-*.mp4
-*.mov
-*.avi
-*.wmv
-*.flv
-*.mkv
-*.webm
-*.mpeg
-*.mpg
-*.m4v
+# *.mp4
+# *.mov
+# *.avi
+# *.wmv
+# *.flv
+# *.mkv
+# *.webm
+# *.mpeg
+# *.mpg
+# *.m4v
 
 # debug
 npm-debug.log*
