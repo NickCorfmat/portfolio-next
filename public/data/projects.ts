@@ -97,9 +97,9 @@ export const projects: Project[] = [
     url: "https://nickcorf.itch.io/through-the-sirenheads",
     github: "https://github.com/JaydenChung/Split2",
     demo: "https://drive.google.com/file/d/1T6xnZxpMmf_FUYoe2tHEIMAOfqRn7AB0/view?usp=sharing",
-    shortDescription: "Short horror game built in UE5.",
+    shortDescription: "Short horror experience built in UE5.",
     description:
-      "Rapidly prototyped a first-person horror game in Unreal Engine 5 with a team of three students at UCSC over two weeks. This experience drops players into a dark, eerie forest, designed to evoke deep foreboding through the threat of unexpected creature encounters.",
+      "Rapidly prototyped a first-person horror experience in Unreal Engine 5 with a team of three students at UCSC over two weeks. This experience drops players into a dark, eerie forest, designed to evoke deep foreboding through the threat of unexpected creature encounters.",
     teamSize: 3,
     dates: "Apr 2024 - May 2024",
     technologies: ["Unreal Engine", "Blender"],
@@ -162,18 +162,6 @@ export const projects: Project[] = [
     dates: "Nov 2024 - Dec 2024",
     technologies: ["TypeScript", "Phaser", "HTML", "CSS"],
   },
-  {
-    name: "Chess vs. AI",
-    category: ["program"],
-    media: "/data/videos/chessvsai.mp4",
-    github: "https://github.com/NickCorfmat/ChessAI",
-    shortDescription: "Chess but with a smart opponent...",
-    description:
-      "Built a Chess AI in C++ to compare thousands of possible moves and strategically execute the optimal move. Utilized minimax algorithm, alpha-beta pruning, and transposition tables to significantly reduce AI search complexity. Incorporated the Universal Chess Interface (UCI) to enable the AI to play against other chess engines.",
-    teamSize: 1,
-    dates: "Nov 2023 - Dec 2023",
-    technologies: ["C++"],
-  },
   // {
   //   name: "Public Key Cryptography",
   //   category: ["program"],
@@ -218,6 +206,18 @@ export const projects: Project[] = [
     teamSize: 1,
     dates: "Feb 2025 - Mar 2025",
     technologies: ["JavaScript", "OpenGL", "HTML", "CSS"],
+  },
+  {
+    name: "Chess vs. AI",
+    category: ["program"],
+    media: "/data/videos/chessvsai.mp4",
+    github: "https://github.com/NickCorfmat/ChessAI",
+    shortDescription: "Chess but with a smart opponent...",
+    description:
+      "Built a Chess AI in C++ to compare thousands of possible moves and strategically execute the optimal move. Utilized minimax algorithm, alpha-beta pruning, and transposition tables to significantly reduce AI search complexity. Incorporated the Universal Chess Interface (UCI) to enable the AI to play against other chess engines.",
+    teamSize: 1,
+    dates: "Nov 2023 - Dec 2023",
+    technologies: ["C++"],
   },
   {
     name: "Polaroid Onestep SX-70",
