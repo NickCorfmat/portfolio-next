@@ -1,6 +1,6 @@
 'use client';
 
-import { useMemo, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import Image from 'next/image';
 import {
   isVideo,
@@ -15,6 +15,11 @@ export default function Hero() {
   const randomProject = useMemo(() => {
     const featuredProjects = getProjectsByCategory(['featured']);
     return getRandomProject(featuredProjects);
+  }, []);
+
+  useEffect(() => {
+    const timeout = setTimeout(() => setMediaLoaded(true), 2000);
+    return () => clearTimeout(timeout);
   }, []);
 
   if (!randomProject) return null;
@@ -32,7 +37,8 @@ export default function Hero() {
           muted
           loop
           playsInline
-          onCanPlay={() => setMediaLoaded(true)}
+          preload="auto"
+          onLoadedData={() => setMediaLoaded(true)}
         >
           <source src={randomProject.media} type="video/mp4" />
         </video>
