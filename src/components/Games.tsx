@@ -19,13 +19,16 @@ export default function Games() {
       <div className="mx-auto w-full max-w-[1200px]">
         <SectionHeader label="Games" />
 
-        <h2 className="text-4xl text-white font-semibold tracking-tight mb-4">
-          From rapidly prototyped <br /> to shipped games.
+        <h2 className="text-[48px] leading-15 text-white font-semibold tracking-tight mb-4">
+          From Prototypes
+          <br />
+          to Shipped Games.
         </h2>
 
         <p className="text-lg text-white/80 leading-relaxed max-w-[600px] mb-8">
-          How I followed the full game development cycle, using industry-used
-          game-engines such as Unity and Unreal Engine.
+          A collection of games I’ve developed across the full production cycle,
+          from rapid prototyping to final release, using industry-standard
+          engines such as Unity and Unreal Engine.
         </p>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10">

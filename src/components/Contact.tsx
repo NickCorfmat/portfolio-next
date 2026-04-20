@@ -55,21 +55,20 @@ export default function Contact() {
       id="contact"
       className="w-full flex flex-col items-center justify-center px-8 pt-10 pb-22"
     >
-      <div className="w-full max-w-[1200px]">
+      <div className="w-full max-w-[1200px] bg-black/20 p-12 rounded-4xl">
         <SectionHeader label="Contact" />
 
         <div className="flex flex-col md:flex-row justify-between gap-12">
           <div className="flex flex-col gap-6 md:max-w-[420px] justify-between">
             <div>
-              <h2 className="text-4xl text-white font-semibold tracking-tight mb-5">
+              <h2 className="text-[40px] leading-12 text-white font-semibold tracking-tight mb-5">
                 Let's Build
                 <br />
                 Something Together.
               </h2>
               <p className="text-lg text-white/80 leading-relaxed">
                 Whether you have a project in mind, a question, or just want to
-                connect — my inbox is open. I'll do my best to get back to you
-                promptly.
+                connect — my inbox is open. I am more than happy to chat!
               </p>
             </div>
 

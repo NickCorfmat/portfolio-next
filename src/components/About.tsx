@@ -7,7 +7,7 @@ export default function About() {
   return (
     <section
       id="about"
-      className="w-full flex flex-col items-center justify-center px-8 pt-10 pb-16"
+      className="w-full min-h-[600px] flex flex-col items-center justify-center px-8 pt-10 pb-16"
     >
       <div className="w-full max-w-[1200px]">
         <SectionHeader label="About Me" />
@@ -15,17 +15,19 @@ export default function About() {
         <div className="flex flex-col md:flex-row justify-between items-center gap-8">
           <div className="w-full md:w-auto flex flex-col gap-8">
             <div>
-              <h2 className="text-4xl text-white font-semibold tracking-tight mb-5">
-                Code, Design,
+              <h2 className="text-[48px] leading-15 text-white font-semibold tracking-tight mb-5">
+                Software Engineer,
                 <br />
-                and Game Development.
+                Game Dev Background.
               </h2>
               <p className="text-lg text-white/80 leading-relaxed max-w-[600px]">
-                I'm a Computer Science: Game Design graduate from UC Santa Cruz
-                focused on software engineering, game development, and building
-                creative interactive experiences. I'm especially interested in
-                opportunities that blend creative problem-solving, inventive
-                design, and cross-disciplinary collaboration.
+                Great software lives at the intersection of logic and
+                creativity. As a Computer Science Game Design graduate from the
+                University of California, Santa Cruz, I approach software with
+                technical rigor and a creative mindset. I’ve built everything
+                from full-stack applications to shipped games through
+                collaborative, cross-disciplinary teams, with a strong emphasis
+                on quality and long-term maintainability.
               </p>
             </div>
           </div>
