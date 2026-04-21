@@ -1,12 +1,12 @@
-import Image from "next/image";
-import { techIconMap } from "@lib/constants";
+import Image from 'next/image';
+import { techIconMap } from '@lib/constants';
 
 function TechTag({ tech }: { tech: string }) {
   const iconSrc = techIconMap[tech];
 
   return (
-    <div className="flex items-center gap-2 p-3 rounded-xl border border-white/10 bg-white/10 hover:bg-white/10 hover:border-white/20 transition-all duration-200 cursor-default">
-      <div className="w-5 h-5 flex-shrink-0 flex items-center justify-center">
+    <div className="flex cursor-default items-center gap-2 rounded-xl border border-white/10 bg-white/10 p-3 transition-all duration-200 hover:border-white/20 hover:bg-white/10">
+      <div className="flex h-5 w-5 flex-shrink-0 items-center justify-center">
         {iconSrc ? (
           <Image
             src={iconSrc}
@@ -18,10 +18,10 @@ function TechTag({ tech }: { tech: string }) {
             unoptimized
           />
         ) : (
-          <div className="w-5 h-5 rounded bg-white/10" />
+          <div className="h-5 w-5 rounded bg-white/10" />
         )}
       </div>
-      <span className="text-md text-white/85 whitespace-nowrap">{tech}</span>
+      <span className="text-md whitespace-nowrap text-white/85">{tech}</span>
     </div>
   );
 }
@@ -30,20 +30,20 @@ export default function Skills() {
   return (
     <section
       id="skills"
-      className="w-full min-h-[500px] px-8 p-18 flex flex-col justify-center items-center"
+      className="flex min-h-[500px] w-full flex-col items-center justify-center p-18 px-8"
     >
-      <div className="mx-auto w-full max-w-[1200px] flex flex-col md:flex-row justify-between gap-8 bg-black/20 p-12 rounded-4xl">
+      <div className="mx-auto flex w-full max-w-[1200px] flex-col justify-between gap-8 rounded-4xl bg-black/20 p-12 lg:flex-row">
         <div>
-          <h2 className="text-[48px] leading-15 font-semibold tracking-tight text-white mb-6">
+          <h2 className="mb-6 text-[48px] leading-15 font-semibold tracking-tight text-white">
             Technologies
           </h2>
-          <p className="text-lg text-white/80 leading-relaxed max-w-[600px]">
+          <p className="max-w-[600px] text-lg leading-relaxed text-white/80">
             My growing collection of languages, frameworks, and tools I use to
             design, build, and ship reliable software applications.
           </p>
         </div>
 
-        <div className="w-full flex flex-wrap gap-3 justify-center">
+        <div className="flex w-full flex-wrap justify-center gap-3">
           {Object.keys(techIconMap).map((name) => (
             <TechTag key={name} tech={name} />
           ))}

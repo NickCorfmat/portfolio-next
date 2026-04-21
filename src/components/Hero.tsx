@@ -60,19 +60,19 @@ export default function Hero() {
       <div className="absolute inset-0 z-[2] bg-gradient-to-r from-black/85 to-transparent" />
 
       {/* CONTENT */}
-      <div className="relative z-[3] flex h-full w-full max-w-[1300px] flex-col items-center justify-center px-8 text-center">
-        <div className="flex flex-col items-center gap-3">
-          <h1 className="text-[72px] leading-[0.95] tracking-tight text-white">
+      <div className="relative z-[3] flex h-full w-full max-w-[1300px] flex-col items-center justify-center gap-0 px-8 text-center">
+        <div className="flex flex-col items-center gap-2 md:gap-3">
+          <h1 className="text-[44px] leading-[0.95] tracking-tight text-white md:text-[72px]">
             NICK CORFMAT
           </h1>
 
-          <h2 className="text-2xl text-white/70 md:text-3xl">
+          <h2 className="text-lg text-white/70 md:text-3xl">
             Software Engineer <span className="text-white/60">/</span> Game
             Developer
           </h2>
         </div>
 
-        <div className="mt-8 flex flex-row gap-3">
+        <div className="mt-5 flex flex-row gap-3 md:mt-8">
           <ActionButton
             label="View Projects"
             primary

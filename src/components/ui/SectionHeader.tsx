@@ -3,10 +3,10 @@ type SectionHeaderProps = {
   className?: string;
 };
 
-export function SectionHeader({ label, className = "" }: SectionHeaderProps) {
+export function SectionHeader({ label, className = '' }: SectionHeaderProps) {
   return (
-    <div className={`flex items-center gap-6 mb-12 ${className}`}>
-      <span className="text-md tracking-[0.1em] uppercase text-white shrink-0">
+    <div className={`mb-12 flex items-center gap-6 ${className}`}>
+      <span className="text-md shrink-0 tracking-[0.1em] text-white uppercase">
         {label}
       </span>
     </div>
