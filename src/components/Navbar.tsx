@@ -1,6 +1,6 @@
 'use client';
 
-import { scrollToSection } from "@lib/scrollToSection";
+import Link from 'next/link';
 import { useEffect, useState } from 'react';
 import { usePathname } from 'next/navigation';
 import { NAVBAR_ITEMS } from '@lib/constants';
