@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useMemo, useState } from 'react';
+import { useEffect, useState } from 'react';
 import Image from 'next/image';
 import {
   isVideo,
@@ -12,14 +12,15 @@ import { ActionButton } from '@ui/ActionButton';
 export default function Hero() {
   const [mediaLoaded, setMediaLoaded] = useState(false);
 
-  const randomProject = useMemo(() => {
+  // AFTER
+  const [randomProject, setRandomProject] = useState(() => {
     const featuredProjects = getProjectsByCategory(['featured']);
-    return getRandomProject(featuredProjects);
-  }, []);
+    return featuredProjects[0];
+  });
 
   useEffect(() => {
-    const timeout = setTimeout(() => setMediaLoaded(true), 2000);
-    return () => clearTimeout(timeout);
+    const featuredProjects = getProjectsByCategory(['featured']);
+    setRandomProject(getRandomProject(featuredProjects));
   }, []);
 
   if (!randomProject) return null;
@@ -37,8 +38,8 @@ export default function Hero() {
           muted
           loop
           playsInline
-          preload="auto"
-          onLoadedData={() => setMediaLoaded(true)}
+          preload="metadata"
+          onCanPlay={() => setMediaLoaded(true)}
         >
           <source src={randomProject.media} type="video/mp4" />
         </video>
@@ -47,11 +48,14 @@ export default function Hero() {
           src={randomProject.media}
           alt={randomProject.name}
           fill
+          priority
+          sizes="100vw"
           className={`object-cover blur-[2px] transition-opacity duration-1000 ${mediaLoaded ? 'opacity-100' : 'opacity-0'}`}
           onLoad={() => setMediaLoaded(true)}
         />
       )}
 
+      {/* BLACK OVERLAY while media loads */}
       <div
         className={`absolute inset-0 z-[1] bg-black transition-opacity duration-1000 ${mediaLoaded ? 'opacity-0' : 'opacity-100'}`}
       />

@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useMemo } from 'react';
+import { useEffect, useState } from 'react';
 import { Project } from '@data/projects';
 import { getProjectsByCategory, shuffleProjects } from '@lib/projectUtils';
 import ProjectCard from './ProjectCard';
@@ -8,10 +8,14 @@ import ProjectPopup from './ProjectPopup';
 import { SectionHeader } from '@ui/SectionHeader';
 
 export default function Games() {
-  const games = useMemo(
-    () => shuffleProjects(getProjectsByCategory(['game'])),
-    []
+  const [games, setGames] = useState(
+    () => getProjectsByCategory(['game']) // server renders unshuffled
   );
+
+  useEffect(() => {
+    setGames(shuffleProjects(getProjectsByCategory(['game']))); // shuffle after hydration
+  }, []);
+
   const [activeProject, setActiveProject] = useState<Project | null>(null);
 
   return (
