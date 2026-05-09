@@ -50,7 +50,7 @@ export const projects: Project[] = [
     technologies: ['Phaser', 'JavaScript', 'HTML'],
   },
   {
-    name: 'Woofmart',
+    name: 'Woof-Mart',
     category: ['game', 'featured', 'about'],
     media: '/data/videos/woofmart.mp4',
     url: 'https://nickcorf.itch.io/woofmart',
